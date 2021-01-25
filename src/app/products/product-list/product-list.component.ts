@@ -9,7 +9,9 @@ import { MproductService } from 'src/app/shared/services/mproduct.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-
+  searchStr = '';
+  typeOfSort = '';
+  countNotNull = "";
   products: Mproduct[];
 
   constructor(private mproductService: MproductService, private router: Router) { }
@@ -35,4 +37,32 @@ export class ProductListComponent implements OnInit {
     this.router.navigate([this.router.url, 'product', id]);
   }
 
+  onSearchProduct() {
+
+  }
+
+  async plusCount(id) {
+    try{
+      let productGet = this.mproductService.getOneById(id);
+      this.products = await productGet == null && productGet == undefined ? [] :await productGet;
+      this.products['count'] = this.products['count'] + 1;
+      await this.mproductService.putOneById(id, this.products);
+      this.getData();
+    } catch(err){
+      console.error(err);
+    }
+  }
+
+  async minusCount(id:number) {
+    try{
+      let productGet = this.mproductService.getOneById(id);
+      this.products = await productGet == null && productGet == undefined ? [] :await productGet;
+      if (this.products['count'] > 0)
+        this.products['count'] = this.products['count'] - 1;
+      await this.mproductService.putOneById(id, this.products);
+      this.getData();
+    } catch(err){
+      console.error(err);
+    }
+  }
 }

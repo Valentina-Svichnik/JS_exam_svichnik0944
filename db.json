@@ -17,7 +17,7 @@
       "manufacturer": null,
       "category": "книги",
       "weight": "0",
-      "count": "0",
+      "count": 2,
       "id": 2
     },
     {
@@ -27,7 +27,7 @@
       "manufacturer": null,
       "category": "техника",
       "weight": "1",
-      "count": "0",
+      "count": 3,
       "id": 3
     }
   ]

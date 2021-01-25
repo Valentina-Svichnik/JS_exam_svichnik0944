@@ -1,20 +1,28 @@
-<!-- <div class="container-fluid my-5">
+<div class="container-fluid my-5">
     <div class="row">
       <div class="col-6">
-        <h5>Поиск по имени и фамилии</h5>
-         <input type="text" class="form-control" placeholder="Поиск">  [(ngModel)]="searchStr" (input)="onSearchWorker()"
+        <h5>Поиск по категории</h5>
+         <input type="text" class="form-control" placeholder="Поиск"  [(ngModel)]="searchStr" (input)="onSearchProduct()"> 
       </div>
       <div class="col-6">
         <h5>Сортировка</h5>
-        <select class="custom-select btn-sm"  id="departament">     [(ngModel)]="typeOfSort"
-          <option selected>Сортировка по id (по возрастанию)</option>
-          <option>Сортировка по id (по убыванию)</option>
-          <option>Сортировка по возрасту (по возрастанию)</option>
-          <option>Сортировка по возрасту (по убыванию)</option>
+        <select class="custom-select btn-sm"  id="departament" [(ngModel)]="typeOfSort">     
+          <option selected>Сортировка по цене (по возрастанию)</option>
+          <option>Сортировка по цене (по убыванию)</option>
+          <option>Сортировка по количеству (по возрастанию)</option>
+          <option>Сортировка по количеству (по убыванию)</option>
         </select>
       </div>
     </div>
-  </div> -->
+    <div class="row m-3">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" [(ngModel)]="countNotNull">
+            <label class="form-check-label" for="defaultCheck1">
+              Показать товары, количество которых больше 0
+            </label>
+          </div>
+    </div>
+  </div>
   
   <div class="container-fluid">
     <table class="table">
@@ -34,16 +42,19 @@
         </tr>
       </thead>
       <tbody>
-         <tr *ngFor="let product of products ">   <!-- | myfilter : searchStr : typeOfSort -->
+         <tr *ngFor="let product of products | myfilter : searchStr : typeOfSort : countNotNull">   
           <td scope="row">{{ product.id }}</td>
           <td>{{ product.name }}</td>
           <td>{{ product.category }}</td>
           <td>{{ product.weight }}</td>
           <td>{{ product.price }}</td>
-          <td>{{ product.count }}</td>
-          <!-- <td>{{ getAge(user.bday) }}</td> -->
+          <td>
+              <button class="btn btn-link btn-sm" (click)="minusCount(product.id)">-</button>
+              {{ product.count }}
+              <button class="btn btn-link btn-sm" (click)="plusCount(product.id)">+</button>
+            </td>
           <td class="text-right">
-            <button class="btn btn-primary" (click)="onLinkProduct(product.id)">
+            <button class="btn btn-primary btn-sm" (click)="onLinkProduct(product.id)">
               Редактировать
             </button>
           </td>
