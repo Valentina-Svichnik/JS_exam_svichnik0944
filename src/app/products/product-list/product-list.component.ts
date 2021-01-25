@@ -37,10 +37,6 @@ export class ProductListComponent implements OnInit {
     this.router.navigate([this.router.url, 'product', id]);
   }
 
-  onSearchProduct() {
-
-  }
-
   async plusCount(id) {
     try{
       let productGet = this.mproductService.getOneById(id);

@@ -11,16 +11,6 @@
       "id": 1
     },
     {
-      "name": "чтото",
-      "vendor": "апр7890апр",
-      "price": "579",
-      "manufacturer": null,
-      "category": "книги",
-      "weight": "0",
-      "count": 0,
-      "id": 2
-    },
-    {
       "name": "олдж",
       "vendor": "прол",
       "price": "6789",
@@ -43,11 +33,11 @@
     {
       "name": "книга 3",
       "vendor": "щш9876пнри",
-      "price": "499",
+      "price": "480",
       "manufacturer": null,
       "category": "книги",
       "weight": "0.5",
-      "count": 4,
+      "count": 3,
       "id": 7
     },
     {
