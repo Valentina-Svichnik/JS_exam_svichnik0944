@@ -32,7 +32,7 @@ export class ProductEditComponent implements OnInit {
       manufacturer: new FormControl(null),
       category: new FormControl(null, [Validators.required]),
       weight: new FormControl(null, [Validators.required]),
-      count: new FormControl(1, [Validators.required]),
+      count: new FormControl(null, [Validators.min(1), Validators.required]),
     });
     this.getData();
   }

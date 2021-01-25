@@ -17,7 +17,7 @@
       "manufacturer": null,
       "category": "книги",
       "weight": "0",
-      "count": 2,
+      "count": 0,
       "id": 2
     },
     {
@@ -29,6 +29,36 @@
       "weight": "1",
       "count": 3,
       "id": 3
+    },
+    {
+      "name": "книга",
+      "vendor": "олд89апр",
+      "price": "590",
+      "manufacturer": "Россия",
+      "category": "книги",
+      "weight": "0.6",
+      "count": "0",
+      "id": 5
+    },
+    {
+      "name": "книга 3",
+      "vendor": "щш9876пнри",
+      "price": "499",
+      "manufacturer": null,
+      "category": "книги",
+      "weight": "0.5",
+      "count": 4,
+      "id": 7
+    },
+    {
+      "name": "шкаф",
+      "vendor": "ло98ж",
+      "price": "1000",
+      "manufacturer": null,
+      "category": "мебель",
+      "weight": "0.3",
+      "count": 2,
+      "id": 8
     }
   ]
 }

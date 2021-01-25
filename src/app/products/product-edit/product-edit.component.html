@@ -25,6 +25,7 @@
           id="price"
           placeholder="1999"
           formControlName="price"
+          min="0"
         />
   
         <label for="manufacturer">Производитель</label>
@@ -51,6 +52,7 @@
           id="weight"
           placeholder="0.5"
           formControlName="weight"
+          min="0"
         />
   
         <label for="count">Количество на складе</label>
@@ -60,6 +62,7 @@
           id="count"
           placeholder="0"
           formControlName="count"
+          min="0"
         />
       </div>
        <button class="btn btn-primary mr-4" [disabled]="productForm.invalid" (click)="onSave()">    <!-- [disabled]="userForm.invalid" (click)="onSave()" -->
