@@ -3,7 +3,7 @@ export interface Mproduct {
     name: string;
     vendor: string;
     price: number;
-    manufacturer: string;
+    manufacturer?: string;
     category: string;
     weight: number;
     count: number;

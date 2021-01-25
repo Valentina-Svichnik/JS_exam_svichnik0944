@@ -1,1 +1,70 @@
-<p>product-edit works!</p>
+<div class="container-fluid mt-3">
+    <form [formGroup]="productForm">
+      <div class="form-group col-5">
+        <label for="name">Название товара</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          placeholder="Имя"
+          formControlName="name"
+        />
+        <label for="vendor">Артикул</label>
+        <input
+          type="text"
+          class="form-control"
+          id="vendor"
+          placeholder="Артикул"
+          formControlName="vendor"
+        />
+  
+        <label for="price">Цена</label>
+        <input
+          type="text"
+          class="form-control"
+          id="price"
+          placeholder="1999"
+          formControlName="price"
+        />
+  
+        <label for="manufacturer">Производитель</label>
+        <input
+          type="text"
+          class="form-control"
+          id="manufacturer"
+          placeholder="Производитель"
+          formControlName="manufacturer"
+        />
+  
+        <label for="category">Категория</label>
+        <select class="custom-select btn-sm" formControlName="category" id="category">
+            <option selected>мебель</option>
+            <option>техника</option>
+            <option>книги</option>
+            <option>телефоны</option>
+          </select>
+  
+        <label for="weight">Вес (кг)</label>
+        <input
+          type="text"
+          class="form-control"
+          id="weight"
+          placeholder="0.5"
+          formControlName="weight"
+        />
+  
+        <label for="count">Количество на складе</label>
+        <input
+          type="text"
+          class="form-control"
+          id="count"
+          placeholder="0"
+          formControlName="count"
+        />
+      </div>
+       <button class="btn btn-primary mr-4" [disabled]="productForm.invalid" (click)="onSave()">    <!-- [disabled]="userForm.invalid" (click)="onSave()" -->
+        Сохранить
+      </button>
+       <button class="btn btn-danger" *ngIf="id != null" (click)="onDelete()">Удалить</button>  <!--  *ngIf="id != null" (click)="onDelete()" -->
+    </form>
+  </div>
