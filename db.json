@@ -1,0 +1,14 @@
+{
+  "mproducts": [
+    {
+      "id": 1,
+      "name": "Апельсины",
+      "vendor": "articul",
+      "price": "typicode",
+      "manufacturer": "Турция",
+      "category": "фрукты",
+      "weight": 34567,
+      "count": 7
+    }
+  ]
+}
